@@ -25,7 +25,7 @@ Add `plugins.select2` to your `INSTALLED_APPS` setting.  Then, add the following
     select2/select2-bootstrap.css # Only needed if using Bootstrap 3
     select2/select2.js
 
-**Note**: `plugins.select2` and `plugins.selectWoo` may conflict if both are installed (Specifically CSS rules).  It is **highly** recommended that you only install one.
+**Note**:  It is **highly** recommnded you do not include both `plugins.select2` and `plugins.selectWoo` stylesheets in the same template.  These stylesheets include rules that will conflict with each other and can cause unexpected results.
 
 ### selectWoo
 
@@ -36,7 +36,7 @@ Add `plugins.selectWoo` to your `INSTALLED_APPS` setting.  Then, add the followi
     selectWoo/css/select2-bootstrap.min.css # Only needed if using Bootstrap 3
     selectWoo/js/selectWoo.full.min.js
 
-**Note**: `plugins.selectWoo` and `plugins.select2` may conflict if both are installed (Specifically CSS rules).  It is **highly** recommended that you only install one.
+**Note**:  It is **highly** recommnded you do not include both `plugins.selectWoo` and `plugins.select2` stylesheets in the same template.  These stylesheets include rules that will conflict with each other and can cause unexpected results.
 
 ### datepicker
 
