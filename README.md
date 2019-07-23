@@ -38,6 +38,8 @@ Add `plugins.selectWoo` to your `INSTALLED_APPS` setting.  Then, add the followi
 
 **Note**:  It is **highly** recommnded you do not include both `plugins.selectWoo` and `plugins.select2` stylesheets in the same template.  These stylesheets include rules that will conflict with each other and can cause unexpected results.
 
+Minified versions of `selectWoo` source files are also included in the install.
+
 ### datepicker
 
 Add `plugins.datepicker` to your `INSTALLED_APPS` setting.  In order for the 508 Compliant datepicker to work, you must include jQuery UI in your template. Add the following source files to your template::
@@ -48,4 +50,4 @@ Add `plugins.datepicker` to your `INSTALLED_APPS` setting.  In order for the 508
 
 **Note** This build of jquery-ui only includes the jQuery UI Datepicker.  Other jQuery UI components may not be 508 Compliant.
 
-* Minified versions of `selectWoo` and `datepicker` are also included in the install.
+Minified versions of `datepicker` source files are also included in the install.
