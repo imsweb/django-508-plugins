@@ -46,3 +46,4 @@ Add `plugins.datepicker` to your `INSTALLED_APPS` setting.  In order for the 508
     jquery-ui/jquery-ui.min.js
     datepicker/js/jqueryui_datepicker_508
 
+**Note** This build of jquery-ui only includes the jQuery UI Datepicker.  Other jQuery UI components may not be 508 Compliant.
