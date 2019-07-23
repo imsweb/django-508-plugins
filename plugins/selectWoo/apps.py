@@ -5,5 +5,6 @@ from django.apps import AppConfig
 
 
 class SelectWooConfig(AppConfig):
-    name = 'selectWoo'
+    name = 'plugins.selectWoo'
+    label = 'selectWoo'
     verbose_name = '508 Compliant select2 V4'
