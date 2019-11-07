@@ -5,7 +5,7 @@ $(function () {
         var beforeShow = $(this).datepicker("option", "beforeShow");
         if (beforeShow) {
             $(this).datepicker("option", "beforeShow", function(input, inst) {
-                beforeShow();
+                beforeShow(input, inst);
                 dayTripper(input, inst);
             });
         }
