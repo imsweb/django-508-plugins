@@ -9,7 +9,6 @@
           numberOfMonths: 1,
           changeMonth: false,
           changeYear: false,
-          showOn: 'button',
         }, opts || {});
         
         const beforeShow = opts.beforeShow || function() {};
