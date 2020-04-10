@@ -38,6 +38,8 @@ Add `plugins.selectWoo` to your `INSTALLED_APPS` setting.  Then, add the followi
 
 **Note**:  It is **highly** recommnded you do not include both `plugins.selectWoo` and `plugins.select2` stylesheets in the same template.  These stylesheets include rules that will conflict with each other and can cause unexpected results.
 
+When using selectWoo, make sure the the "for" attribute of the related <label> tag matches the ID of the select box.
+
 Minified versions of `selectWoo` source files are also included in the install.
 
 ### datepicker
