@@ -8,7 +8,7 @@
 
 # 1.0.1
 
-* Fixed a bug where datepicker beforeSend wasn't passing in the params 
+* Fixed a bug where the datepicker `beforeSend` function wasn't passing in the parameters.
 
 # 1.0.0
 
