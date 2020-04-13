@@ -2,14 +2,23 @@
     // We need to add the required datepicker options to make every datepicker
     // 508 compliant
 
+    $.datepicker.setDefaults({
+      numberOfMonths: 1,
+      changeMonth: false,
+      changeYear: false,
+    })
+
     const datepicker = $.fn.datepicker
 
     $.fn.datepicker = function(opts) {
-        opts = $.extend({
-          numberOfMonths: 1,
-          changeMonth: false,
-          changeYear: false,
-        }, opts || {});
+        
+        // This function is overloaded in jquery ui; we only want to intercept
+        // the times when we are calling datepicker(...) in order to instantiate
+        // a new instance - this is the case when datepicker() is called with a
+        // single, object type argument.
+        if (arguments.length !== 1 || typeof arguments[0] !== 'object') {
+          return datepicker.apply(this, arguments);
+        }
         
         const beforeShow = opts.beforeShow || function() {};
         opts.beforeShow = function(input, inst) {
@@ -25,7 +34,7 @@
 
         // The 508 compliant version of jQuery UI's datepicker does not support numberOfMonths option.  
         // numMonths must be equal to 1.
-        if (opts.numberOfMonths != 1) {
+        if (opts.numberOfMonths && opts.numberOfMonths != 1) {
             console.warn("jQuery UI - the numberOfMonths option must equal 1 for the 508 compliant version of jQuery UI Datepicker.");
         }
         
@@ -37,7 +46,7 @@
             console.warn("jQuery UI - the changeYear option must be false for the 508 compliant version of jQuery UI Datepicker.");
         }
         
-        const instances = $(datepicker.apply(this, [opts]));
+        const instances = $(datepicker.apply(this, arguments));
         
         // If a button opens the datepicker, it needs a label.
         if (opts.showOn == 'button') {
