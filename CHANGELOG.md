@@ -6,6 +6,11 @@
 
 * Updated selectWoo to version 1.0.6
 
+* **BREAKING CHANGE** Changed datepicker compliance patch to extend the original datepicker implementation, rather than patching instances after initialization.
+
+  Update instructions:
+    Move the inclusion of `datepicker/jqueryui_datepicker_508.js` to right after the datepicker plugin.
+
 # 1.0.1
 
 * Fixed a bug where the datepicker `beforeSend` function wasn't passing in the parameters.
