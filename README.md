@@ -7,7 +7,7 @@ Installable Django app containing 508-compliant plugins.
 
 ## Current 508 Compliant packages:
 
-* select2 v3 [ [Git](https://github.com/imsweb/select2/tree/IMS_select2) | [Docs](https://select2.github.io/select2/) ]
+* select2 v3 [ [Docs](https://select2.github.io/select2/) ]
 * selectWoo (select2 V4) [ [Git](https://github.com/woocommerce/selectWoo) | [Docs](https://select2.org/) | [Bootstrap 3 Theme](https://github.com/select2/select2-bootstrap-theme) ]
 * jQuery 1.11.4 Datepicker [ [Git](https://github.com/jquery/jquery-ui) | [Docs](https://api.jqueryui.com/datepicker/) ]
 
