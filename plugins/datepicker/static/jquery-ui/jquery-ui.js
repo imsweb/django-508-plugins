@@ -1,6 +1,7 @@
-/*! jQuery UI - v1.11.4 - 2019-07-23
+/*! jQuery UI - v1.11.4 (with unreleased bug patch for datepicker) - 2021-04-05
 * http://jqueryui.com
 * Includes: core.js, datepicker.js
+* NOTE: This includes an unreleased bug patch for datepicker: https://github.com/jquery/jquery-ui/pull/1935
 * Copyright jQuery Foundation and other contributors; Licensed MIT */
 
 (function( factory ) {
@@ -1051,7 +1052,7 @@ $.extend(Datepicker.prototype, {
 		}
 		if (!$.datepicker._pos) { // position below input
 			$.datepicker._pos = $.datepicker._findPos(input);
-			$.datepicker._pos[1] += input.offsetHeight; // add the height
+			$.datepicker._pos[1] += $( input ).outerHeight(); // add the height
 		}
 
 		isFixed = false;
@@ -2377,6 +2378,7 @@ $.datepicker.uuid = new Date().getTime();
 $.datepicker.version = "1.11.4";
 
 var datepicker = $.datepicker;
+
 
 
 
