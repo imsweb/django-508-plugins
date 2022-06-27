@@ -1,4 +1,4 @@
-(function () {   
+(function () {
     // We need to add the required datepicker options to make every datepicker
     // 508 compliant
 
@@ -6,12 +6,12 @@
       numberOfMonths: 1,
       changeMonth: false,
       changeYear: false,
-    })
+    });
 
-    const datepicker = $.fn.datepicker
+    const datepicker = $.fn.datepicker;
 
     $.fn.datepicker = function(opts) {
-        
+
         // This function is overloaded in jquery ui; we only want to intercept
         // the times when we are calling datepicker(...) in order to instantiate
         // a new instance - this is the case when datepicker() is called with a
@@ -19,74 +19,74 @@
         if (arguments.length !== 1 || typeof arguments[0] !== 'object') {
           return datepicker.apply(this, arguments);
         }
-        
+
         const beforeShow = opts.beforeShow || function() {};
         opts.beforeShow = function(input, inst) {
             beforeShow(input, inst);
             dayTripper(input, inst);
-        }
+        };
 
         const onClose = opts.onClose || function() {};
         opts.onClose = function(dateText, inst) {
             onClose(dateText, inst);
             removeAria();
-        }
+        };
 
         // The 508 compliant version of jQuery UI's datepicker does not support numberOfMonths option.  
         // numMonths must be equal to 1.
         if (opts.numberOfMonths && opts.numberOfMonths != 1) {
             console.warn("jQuery UI - the numberOfMonths option must equal 1 for the 508 compliant version of jQuery UI Datepicker.");
         }
-        
+
         if (opts.changeMonth) {
             console.warn("jQuery UI - the changeMonth option must be false for the 508 compliant version of jQuery UI Datepicker.");
         }
-        
+
         if (opts.changeYear) {
             console.warn("jQuery UI - the changeYear option must be false for the 508 compliant version of jQuery UI Datepicker.");
         }
-        
+
         const instances = $(datepicker.apply(this, arguments));
-        
+
         // If a button opens the datepicker, it needs a label.
         if (opts.showOn == 'button') {
             var datepickerData, labelId;
-          
+
             instances.each(function() {
-                datepickerData = $(this).data('datepicker')
-                labelId = 'datepicker-' + datepickerData.id + '-label'
+                datepickerData = $(this).data('datepicker');
+                labelId = 'datepicker-' + datepickerData.id + '-label';
 
                 if (!$('#' + labelId).length)
-                    console.warn("jQuery UI - when a datepicker is initialized with showOn == 'button', the button needs a label. Element #" + labelId + " does not exist.")
+                    console.warn("jQuery UI - when a datepicker is initialized with showOn == 'button', the button needs a label. Element #" + labelId + " does not exist.");
 
                 datepickerData.trigger.attr('aria-describedby', labelId);
-            })
+            });
         }
 
         return instances;
-    }
+    };
 
 
     function dayTripper(input, inst) {
       setTimeout(function () {
         var today = $('.ui-datepicker-today a')[0];
-      
+
         if (!today) {
           today = $('.ui-state-active')[0] ||
               $('.ui-state-default')[0];
         }
-      
+
         // Hide the entire page (except the date picker)
         // from screen readers to prevent document navigation
         // (by headings, etc.) while the popup is open
         $("body").attr('id','dp-container');
         $("#dp-container").attr('aria-hidden','true');
         $("#main").attr('aria-hidden','true');
-      
+
         // Hide the "today" button because it doesn't do what
         // you think it supposed to do
         $(".ui-datepicker-current").hide();
-      
+
         today.focus();
         datePickHandler(input);
         $(document).on('click', '#ui-datepicker-div .ui-datepicker-close', function () {
@@ -146,7 +146,7 @@
 
         if (27 === which) {
           keyVent.stopPropagation();
-          
+
           return closeCalendar(input);
         } else if (which === 9 && keyVent.shiftKey) { // SHIFT + TAB
           keyVent.preventDefault();
@@ -240,10 +240,10 @@
       var container = $('#ui-datepicker-div');
       $(container).off('keydown');
       $(container).off("click");
-        
+
       $(".ui-datepicker-close").off("click");
-        
-        
+
+
       var showOn = $(input).datepicker("option", "showOn");
       if (showOn == "focus" || showOn == "both") {
         $(input).off("focus");
@@ -275,9 +275,12 @@
     }
 
     function moveOneMonth(currentDate, dir) {
-      var button = (dir === 'next')
-                  ? $('.ui-datepicker-next')[0]
-                  : $('.ui-datepicker-prev')[0];
+      var button = null;
+      if (dir === 'next') {
+        button = $('.ui-datepicker-next')[0];
+      } else {
+        button = $('.ui-datepicker-prev')[0];
+      }
 
       if (!button) {
         return;
@@ -714,9 +717,12 @@
         adjacentIndex = months.length - 1;
       }
 
-      buttonText = (isNext)
-                    ? 'Next Month, ' + firstToCap(months[adjacentIndex]) + ' ' + currentYear
-                    : 'Previous Month, ' + firstToCap(months[adjacentIndex]) + ' ' + currentYear;
+      buttonText = null;
+      if (isNext) {
+        buttonText = 'Next Month, ' + firstToCap(months[adjacentIndex]) + ' ' + currentYear;
+      } else {
+        buttonText = 'Previous Month, ' + firstToCap(months[adjacentIndex]) + ' ' + currentYear;
+      }
 
       $(button).find('.ui-icon').html(buttonText);
 
