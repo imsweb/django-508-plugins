@@ -1,0 +1,22 @@
+{
+  "name": "django-508-plugins",
+  "version": "2.0.0",
+  "description": "A collection of installable npm apps containining 508 compliant plugins.",
+  "files": [
+    "./plugins/datepicker/static/datepicker/**",
+    "./plugins/select2/static/select2/**"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imsweb/django-508-plugins.git"
+  },
+  "author": "Brad Rutten",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imsweb/django-508-plugins/issues"
+  },
+  "homepage": "https://github.com/imsweb/django-508-plugins#readme"
+}
