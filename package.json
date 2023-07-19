@@ -4,7 +4,8 @@
   "description": "A collection of installable npm apps containining 508 compliant plugins.",
   "files": [
     "./plugins/datepicker/static/datepicker/**",
-    "./plugins/select2/static/select2/**"
+    "./plugins/select2/static/select2/**",
+    "./plugins/selectWoo/static/selectWoo/**"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
