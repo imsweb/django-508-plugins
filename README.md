@@ -3,7 +3,7 @@ Installable Django app containing 508-compliant plugins.
 
 ## Requirements:
 
-* jQuery 1.6+
+* jQuery 3.6.0+ or jQuery 3.4.1.
 
 ## Current 508 Compliant packages:
 
@@ -27,20 +27,17 @@ Add `plugins.select2` to your `INSTALLED_APPS` setting.  Then, add the following
 
 **Note**:  It is **highly** recommnded you do not include both `plugins.select2` and `plugins.selectWoo` stylesheets in the same template.  These stylesheets include rules that will conflict with each other and can cause unexpected results.
 
-### selectWoo
+### selectcn
 
 
-Add `plugins.selectWoo` to your `INSTALLED_APPS` setting.  Then, add the following source files to your template::
+Add `plugins.selectcn` to your `INSTALLED_APPS` setting.  Then, add the following source files to your template::
 
-    selectWoo/css/selectWoo.css
-    selectWoo/css/select2-bootstrap.css # Only needed if using Bootstrap 3
-    selectWoo/js/selectWoo.full.js
+    selectcn/css/selectcn.css
+    selectcn/js/selectcn.js
 
-**Note**:  It is **highly** recommended you do not include both `plugins.selectWoo` and `plugins.select2` stylesheets in the same template.  These stylesheets include rules that will conflict with each other and can cause unexpected results.
+**Note**:  It is **highly** recommended you do not include both `plugins.selectcn` and `plugins.select2` stylesheets in the same template.  These stylesheets include rules that will conflict with each other and can cause unexpected results.
 
-When using selectWoo, make sure the the `for` attribute of the related `<label>` tag matches the ID of the select box.
-
-Minified versions of `selectWoo` source files are also included in the install.
+When using selectcn, make sure the the `for` attribute of the related `<label>` tag matches the ID of the select box.
 
 ### datepicker
 
