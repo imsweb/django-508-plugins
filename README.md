@@ -8,7 +8,7 @@ Installable Django app containing 508-compliant plugins.
 ## Current 508 Compliant packages:
 
 * select2 v3 [ [Docs](https://select2.github.io/select2/) ]
-* selectcn (select2 V4.1.0-rc.0) [ [Git](https://git.imsweb.com/chen/selectcn) ]
+* selectcn (select2 V4.1.0-rc.0) [ [Docs](https://select2.org/) ]
 * jQuery 1.11.4 Datepicker [ [Git](https://github.com/jquery/jquery-ui) | [Docs](https://api.jqueryui.com/datepicker/) ]
 
 ## Usage
