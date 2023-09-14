@@ -1,3 +1,7 @@
+# 3.0.0
+
+* Switched from SelectWoo to Selectcn.
+
 # 2.0.1
 
 * Fixed a bug with datepicker where the datepicker widget was appearing in the wrong location if it was in a popover or modal or had some scrolling. This fix has yet to be included in the stable release of jquery-ui and a pull request for it can be found here: [https://github.com/jquery/jquery-ui/pull/1935](https://github.com/jquery/jquery-ui/pull/1935)
