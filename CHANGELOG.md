@@ -1,5 +1,6 @@
 # 3.0.0
 
+* Added `jquery-ui.structure.min.css` and `jquery-ui.theme.min.css` to `/plugins/datepicker/static/jquery-ui`
 * Switched from SelectWoo to Selectcn.
 
 # 2.0.1
