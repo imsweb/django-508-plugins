@@ -1,6 +1,6 @@
 {
   "name": "django-508-plugins",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A collection of installable npm apps containining 508 compliant plugins.",
   "files": [
     "./plugins/datepicker/static/datepicker/**",
