@@ -1,3 +1,7 @@
+# 3.1.0
+
+* Upgraded jQuery UI from 1.13.2 to 1.14.2.
+
 # 3.0.0
 
 * Added `jquery-ui.structure.min.css` and `jquery-ui.theme.min.css` to `/plugins/datepicker/static/jquery-ui`
